@@ -23,6 +23,8 @@ jobs:
           style: 'file' # Use .clang-format config file.
           tidy-checks: '-*' # disable clang-tidy checks.
           ignore: pipe/linux/dhcp|pipe/linux/hostap|lib/hostap
+          thread-comments: 'update'
+          format-review: 'true'
 
       - name: Fail fast?!
         if: steps.linter.outputs.clang-format-checks-failed > 0
