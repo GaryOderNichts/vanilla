@@ -1,10 +1,13 @@
-name: cpp-linter
+name: Format check
 on:
   pull_request:
     paths: 
-      - 'gui/**.{c,h}'
-      - 'lib/**.{c,h}'
-      - 'pipe/**.{c,h}'
+      - 'gui/**.c'
+      - 'gui/**.h'
+      - 'lib/**.c'
+      - 'lib/**.h'
+      - 'pipe/**.c'
+      - 'pipe/**.h'
 
 jobs:
   cpp-linter:
@@ -20,6 +23,8 @@ jobs:
           style: 'file' # Use .clang-format config file.
           tidy-checks: '-*' # disable clang-tidy checks.
           ignore: pipe/linux/dhcp|pipe/linux/hostap|lib/hostap
+          thread-comments: 'update'
+          format-review: 'true'
 
       - name: Fail fast?!
         if: steps.linter.outputs.clang-format-checks-failed > 0

@@ -261,7 +261,8 @@ void handle_command_packet(gamepad_context_t *info, int skt, CmdHeader *request)
     case PACKET_TYPE_REQUEST:
         send_ack_packet(skt, request);
         switch (request->query_type) {
-        case CMD_GENERIC: {
+        case CMD_GENERIC:
+        {
             handle_generic_packet(info, skt, (GenericPacket *) request);
             break;
         }
@@ -279,7 +280,8 @@ void handle_command_packet(gamepad_context_t *info, int skt, CmdHeader *request)
         break;
     case PACKET_TYPE_RESPONSE:
         send_ack_packet(skt, request);
-        switch (request->query_type) {
+        switch (request->query_type)
+        {
         default:
             // vanilla_log("[Command] Unhandled request command: %u", request->query_type);
             break;

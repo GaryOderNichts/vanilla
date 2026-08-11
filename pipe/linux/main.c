@@ -48,8 +48,10 @@ int main(int argc, const char **argv)
     const char *wireless_interface = 0;
     const char *log_file = 0;
 
-    for (int i = 1; i < argc; i++) {
-        if (!strcmp(argv[i], "-udp")) {
+    for (int i = 1; i < argc; i++)
+    {
+        if (!strcmp(argv[i], "-udp"))
+        {
             udp_mode = 1;
         } else if (!strcmp(argv[i], "-local")) {
             local_mode = 1;
