@@ -2,9 +2,12 @@ name: Format check
 on:
   pull_request:
     paths: 
-      - 'gui/**.{c,h}'
-      - 'lib/**.{c,h}'
-      - 'pipe/**.{c,h}'
+      - 'gui/**.c'
+      - 'gui/**.h'
+      - 'lib/**.c'
+      - 'lib/**.h'
+      - 'pipe/**.c'
+      - 'pipe/**.h'
 
 jobs:
   cpp-linter:
