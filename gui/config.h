@@ -16,8 +16,7 @@ typedef struct {
     vanilla_psk_t psk;
 } vpi_console_entry_t;
 
-typedef struct
-{
+typedef struct {
     uint8_t connected_console_count;
     vpi_console_entry_t *connected_console_entries;
     uint32_t server_address;
